@@ -1,4 +1,5 @@
 import csv
+from datetime import date
 from pathlib import Path
 from typing import Optional
 
@@ -38,21 +39,36 @@ def _row_to_load(row: dict) -> Load:
 
 def get_loads(
     origin: Optional[str] = None,
-    destination: Optional[str] = None,
+    min_distance: Optional[float] = None,
+    max_distance: Optional[float] = None,
+    pickup_date: Optional[date] = None,
     equipment_type: Optional[str] = None,
 ) -> list[Load]:
     filtered_loads = _read_rows()
 
     if origin:
         filtered_loads = [
-            load for load in filtered_loads 
+            load for load in filtered_loads
             if load["origin"].lower() == origin.lower()
         ]
 
-    if destination:
+    if min_distance is not None:
         filtered_loads = [
-            load for load in filtered_loads 
-            if load["destination"].lower() == destination.lower()
+            load for load in filtered_loads
+            if float(load["miles"]) >= min_distance
+        ]
+
+    if max_distance is not None:
+        filtered_loads = [
+            load for load in filtered_loads
+            if float(load["miles"]) <= max_distance
+        ]
+
+    if pickup_date:
+        pickup_date_str = pickup_date.strftime("%Y-%m-%d")
+        filtered_loads = [
+            load for load in filtered_loads
+            if load["pickup_datetime"].startswith(pickup_date_str)
         ]
 
     if equipment_type:

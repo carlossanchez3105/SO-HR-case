@@ -5,7 +5,7 @@ load_id,origin,destination,pickup_datetime,delivery_datetime,equipment_type,load
 004,Houston TX,Memphis TN,2026-03-23 10:00,2026-03-25 08:00,Flatbed,3100.00,Tarping required. Oversize permit needed.,47500,Steel Coils,6,560,48x102x60
 005,Chicago IL,Columbus OH,2026-03-21 14:00,2026-03-22 10:00,Dry Van,1450.00,Drop trailer. Call shipper 1hr ahead.,33000,Automotive Parts,280,310,53x102x110
 006,Seattle WA,Portland OR,2026-03-22 09:00,2026-03-22 17:00,Reefer,950.00,Frozen. Temp: -10F. Grocery chain delivery.,22000,Frozen Foods,90,175,48x102x110
-007,Dallas,Miami FL,2026-03-23 06:00,2026-03-26 12:00,Dry Van,3400.00,High value. No overnight parking in open lots.,39000,Electronics,410,1300,53x102x110
+007,Dallas,Miami FL,2026-03-23 06:00,2026-03-26 12:00,Flatbed,3400.00,High value. No overnight parking in open lots.,39000,Electronics,410,1300,53x102x110
 008,Kansas City MO,Denver CO,2026-03-22 12:00,2026-03-24 08:00,Flatbed,2600.00,Construction materials. Loading dock required at delivery.,44000,Lumber,1,600,48x102x60
 009,Nashville TN,Philadelphia PA,2026-03-24 07:00,2026-03-26 14:00,Dry Van,2200.00,Palletized consumer goods. Liftgate required at delivery.,31000,Household Goods,260,800,53x102x110
 010,Phoenix AZ,Salt Lake City UT,2026-03-22 08:00,2026-03-23 18:00,Dry Van,1750.00,Standard dry freight.,36000,Retail Merchandise,300,600,53x102x110

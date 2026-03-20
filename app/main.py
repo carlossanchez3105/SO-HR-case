@@ -1,5 +1,6 @@
 from collections import defaultdict
 from contextlib import asynccontextmanager
+from datetime import date
 from typing import Optional
 
 from dotenv import load_dotenv
@@ -49,10 +50,12 @@ def health_check():
 @app.get("/loads", response_model=Load, dependencies=[Depends(verify_api_key)])
 def list_loads(
     origin: Optional[str] = None,
-    destination: Optional[str] = None,
+    min_distance: Optional[float] = None,
+    max_distance: Optional[float] = None,
+    pickup_date: Optional[date] = None,
     equipment_type: Optional[str] = None,
 ):
-    results = get_loads(origin=origin, destination=destination, equipment_type=equipment_type)
+    results = get_loads(origin=origin, min_distance=min_distance, max_distance=max_distance, pickup_date=pickup_date, equipment_type=equipment_type)
     if not results:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No loads found matching filters")
     return results[0]
